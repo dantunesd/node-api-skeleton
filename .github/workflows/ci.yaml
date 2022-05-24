@@ -1,0 +1,30 @@
+name: CI
+
+on: [push]
+
+jobs:
+  CI: 
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      
+      - name: Setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Prepare Enviroment
+        run: cp .env.example .env
+
+      - name: Running Linter
+        run: npm run lint
+
+      - name: Running Unit Tests
+        run: npm test
+
+      - name: Running Integration Tests
+        run: npm run test:integration

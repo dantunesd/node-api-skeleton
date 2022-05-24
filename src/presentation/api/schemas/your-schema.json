@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Your",
+  "description": "The representation of ...",
+  "type": "object",
+  "examples": [
+    {
+      "field": "value"
+    }
+  ],
+  "required": [
+    "field"
+  ],
+  "properties": {
+    "field": {
+      "type": "string",
+      "description": "Your necessary field"
+    }
+  },
+  "additionalProperties": false
+}
